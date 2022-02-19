@@ -1,7 +1,6 @@
 package sendtotv
 
 import (
-	_ "embed"
 	"io"
 	"time"
 
