@@ -134,9 +134,9 @@ func (p *NewScreen) InterInit(tv *soapcalls.TVPayload) error {
 			s.Sync()
 			p.EmitMsg(p.getLastAction())
 		case *tcell.EventKey:
-			if p.HandleKeyEvent(ev){
-			  return nil
-      }
+			if p.HandleKeyEvent(ev) {
+				return nil
+			}
 		}
 	}
 }
@@ -163,7 +163,7 @@ func (p *NewScreen) HandleKeyEvent(ev *tcell.EventKey) bool {
 		stringVolume := strconv.Itoa(setVolume)
 
 		if err := tv.SetVolumeSoapCall(stringVolume); err != nil {
-      return false
+			return false
 		}
 	}
 
