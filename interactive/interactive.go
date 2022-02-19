@@ -2,9 +2,7 @@ package interactive
 
 import (
 	"errors"
-	"fmt"
 	"net/url"
-	"os"
 	"strconv"
 	"strings"
 	"sync"
@@ -69,7 +67,7 @@ func (p *NewScreen) EmitMsg(inputtext string) {
 	} else {
 		p.emitStr(w/2-len(inputtext)/2, h/2, boldStyle, inputtext)
 	}
-	p.emitStr(1, 1, tcell.StyleDefault, "Press ESC to stop and exit.")
+	p.emitStr(1, 1, tcell.StyleDefault, "Press ESC to stop.")
 
 	isMute := "0"
 	var err error
@@ -90,7 +88,7 @@ func (p *NewScreen) EmitMsg(inputtext string) {
 }
 
 // InterInit - Start the interactive terminal
-func (p *NewScreen) InterInit(tv *soapcalls.TVPayload) {
+func (p *NewScreen) InterInit(tv *soapcalls.TVPayload) error {
 	p.TV = tv
 
 	muteChecker := time.NewTicker(1 * time.Second)
@@ -112,8 +110,7 @@ func (p *NewScreen) InterInit(tv *soapcalls.TVPayload) {
 	encoding.Register()
 	s := p.Current
 	if err := s.Init(); err != nil {
-		fmt.Fprintf(os.Stderr, "%v\n", err)
-		os.Exit(1)
+		return err
 	}
 
 	defStyle := tcell.StyleDefault.
@@ -128,8 +125,7 @@ func (p *NewScreen) InterInit(tv *soapcalls.TVPayload) {
 	// in a panic error since we need to properly
 	// initialize the tcell window.
 	if err := tv.SendtoTV("Play1"); err != nil {
-		fmt.Fprintf(os.Stderr, "%v\n", err)
-		os.Exit(1)
+		return err
 	}
 
 	for {
@@ -138,24 +134,25 @@ func (p *NewScreen) InterInit(tv *soapcalls.TVPayload) {
 			s.Sync()
 			p.EmitMsg(p.getLastAction())
 		case *tcell.EventKey:
-			p.HandleKeyEvent(ev)
+			if p.HandleKeyEvent(ev){
+			  return nil
+      }
 		}
 	}
 }
 
 // HandleKeyEvent Method to handle all key press events
-func (p *NewScreen) HandleKeyEvent(ev *tcell.EventKey) {
+func (p *NewScreen) HandleKeyEvent(ev *tcell.EventKey) bool {
 	tv := p.TV
 
 	if ev.Key() == tcell.KeyEscape {
 		tv.SendtoTV("Stop")
 		p.Fini()
-	}
-
-	if ev.Key() == tcell.KeyPgUp || ev.Key() == tcell.KeyPgDn {
+		return true
+	} else if ev.Key() == tcell.KeyPgUp || ev.Key() == tcell.KeyPgDn {
 		currentVolume, err := tv.GetVolumeSoapCall()
 		if err != nil {
-			return
+			return false
 		}
 
 		setVolume := currentVolume - 1
@@ -166,7 +163,7 @@ func (p *NewScreen) HandleKeyEvent(ev *tcell.EventKey) {
 		stringVolume := strconv.Itoa(setVolume)
 
 		if err := tv.SetVolumeSoapCall(stringVolume); err != nil {
-			return
+      return false
 		}
 	}
 
@@ -195,15 +192,14 @@ func (p *NewScreen) HandleKeyEvent(ev *tcell.EventKey) {
 			}
 		}
 	}
+	return false
 }
 
 // Fini Method to implement the screen interface
 func (p *NewScreen) Fini() {
 	p.Current.Fini()
-	os.Exit(0)
 }
 
-// InitTcellNewScreen .
 func InitTcellNewScreen() (*NewScreen, error) {
 	s, e := tcell.NewScreen()
 	if e != nil {
