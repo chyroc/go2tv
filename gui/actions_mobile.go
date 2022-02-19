@@ -16,11 +16,11 @@ import (
 	"fyne.io/fyne/v2/dialog"
 	"fyne.io/fyne/v2/storage"
 	"fyne.io/fyne/v2/theme"
-	"github.com/alexballas/go2tv/internal/devices"
-	"github.com/alexballas/go2tv/internal/httphandlers"
-	"github.com/alexballas/go2tv/internal/soapcalls"
-	"github.com/alexballas/go2tv/internal/urlstreamer"
-	"github.com/alexballas/go2tv/internal/utils"
+	"github.com/alexballas/go2tv/devices"
+	"github.com/alexballas/go2tv/httphandlers"
+	"github.com/alexballas/go2tv/soapcalls"
+	"github.com/alexballas/go2tv/urlstreamer"
+	"github.com/alexballas/go2tv/utils"
 	"github.com/pkg/errors"
 )
 

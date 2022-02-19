@@ -12,8 +12,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/alexballas/go2tv/internal/soapcalls"
-	"github.com/alexballas/go2tv/internal/utils"
+	"github.com/alexballas/go2tv/soapcalls"
+	"github.com/alexballas/go2tv/utils"
 )
 
 // HTTPserver - new http.Server instance.
