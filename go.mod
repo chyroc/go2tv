@@ -1,4 +1,4 @@
-module github.com/alexballas/go2tv
+module github.com/chyroc/go2tv
 
 go 1.16
 

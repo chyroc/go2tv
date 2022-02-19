@@ -7,16 +7,16 @@
 <div align="center">
 <p>
 
-![Go](https://github.com/alexballas/Go2TV/workflows/Go/badge.svg)
-[![Go Report Card](https://goreportcard.com/badge/github.com/alexballas/Go2TV)](https://goreportcard.com/report/github.com/alexballas/Go2TV)
-[![Release Version](https://img.shields.io/github/v/release/alexballas/Go2TV?label=Release)](https://github.com/alexballas/Go2TV/releases/latest)
-[![Tests](https://github.com/alexballas/go2tv/actions/workflows/go.yml/badge.svg)](https://github.com/alexballas/go2tv/actions/workflows/go.yml)
+![Go](https://github.com/chyroc/go2tv/workflows/Go/badge.svg)
+[![Go Report Card](https://goreportcard.com/badge/github.com/chyroc/go2tv)](https://goreportcard.com/report/github.com/chyroc/go2tv)
+[![Release Version](https://img.shields.io/github/v/release/alexballas/Go2TV?label=Release)](https://github.com/chyroc/go2tv/releases/latest)
+[![Tests](https://github.com/chyroc/go2tv/actions/workflows/go.yml/badge.svg)](https://github.com/chyroc/go2tv/actions/workflows/go.yml)
 
-[![Build for ARM](https://github.com/alexballas/go2tv/actions/workflows/build-arm.yml/badge.svg)](https://github.com/alexballas/go2tv/actions/workflows/build-arm.yml)
-[![Build for Android](https://github.com/alexballas/go2tv/actions/workflows/build-android.yml/badge.svg)](https://github.com/alexballas/go2tv/actions/workflows/build-android.yml)
-[![Build for Linux](https://github.com/alexballas/go2tv/actions/workflows/build-linux.yml/badge.svg)](https://github.com/alexballas/go2tv/actions/workflows/build-linux.yml)
-[![Build for MacOS](https://github.com/alexballas/go2tv/actions/workflows/build-mac.yml/badge.svg)](https://github.com/alexballas/go2tv/actions/workflows/build-mac.yml)
-[![Build for Windows](https://github.com/alexballas/go2tv/actions/workflows/build-windows.yml/badge.svg)](https://github.com/alexballas/go2tv/actions/workflows/build-windows.yml)
+[![Build for ARM](https://github.com/chyroc/go2tv/actions/workflows/build-arm.yml/badge.svg)](https://github.com/chyroc/go2tv/actions/workflows/build-arm.yml)
+[![Build for Android](https://github.com/chyroc/go2tv/actions/workflows/build-android.yml/badge.svg)](https://github.com/chyroc/go2tv/actions/workflows/build-android.yml)
+[![Build for Linux](https://github.com/chyroc/go2tv/actions/workflows/build-linux.yml/badge.svg)](https://github.com/chyroc/go2tv/actions/workflows/build-linux.yml)
+[![Build for MacOS](https://github.com/chyroc/go2tv/actions/workflows/build-mac.yml/badge.svg)](https://github.com/chyroc/go2tv/actions/workflows/build-mac.yml)
+[![Build for Windows](https://github.com/chyroc/go2tv/actions/workflows/build-windows.yml/badge.svg)](https://github.com/chyroc/go2tv/actions/workflows/build-windows.yml)
 </p>
 Cast your media files to UPnP/DLNA Media Renderers and Smart TVs.
 </div>
@@ -61,7 +61,7 @@ Build requirements
 
 Quick Start
 -----
-Download the app here https://github.com/alexballas/Go2TV/releases/latest. A single executable. No installation or external dependencies.
+Download the app here https://github.com/chyroc/go2tv/releases/latest. A single executable. No installation or external dependencies.
 
 Tested on
 -----

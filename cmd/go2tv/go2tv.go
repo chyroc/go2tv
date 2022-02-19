@@ -13,13 +13,13 @@ import (
 	"sort"
 	"time"
 
-	"github.com/alexballas/go2tv/devices"
-	"github.com/alexballas/go2tv/gui"
-	"github.com/alexballas/go2tv/httphandlers"
-	"github.com/alexballas/go2tv/interactive"
-	"github.com/alexballas/go2tv/soapcalls"
-	"github.com/alexballas/go2tv/urlstreamer"
-	"github.com/alexballas/go2tv/utils"
+	"github.com/chyroc/go2tv/devices"
+	"github.com/chyroc/go2tv/gui"
+	"github.com/chyroc/go2tv/httphandlers"
+	"github.com/chyroc/go2tv/interactive"
+	"github.com/chyroc/go2tv/soapcalls"
+	"github.com/chyroc/go2tv/urlstreamer"
+	"github.com/chyroc/go2tv/utils"
 	"github.com/pkg/errors"
 )
 
